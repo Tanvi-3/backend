@@ -8,7 +8,7 @@ from __init__ import app,db  # Definitions initialization
 from model.jokes import initJokes
 from model.users import initUsers
 from model.players import initPlayers
-from model.weather import initWeather 
+from model.weather2 import initWeather 
 
 
 # setup APIs

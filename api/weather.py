@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify  # jsonify creates an endpoint response obj
 from flask_restful import Api, Resource # used for REST API building
 import requests  # used for testing 
 import random
+import http.client
 
 from model.weather2 import *
 
@@ -13,20 +14,13 @@ api = Api(weather_api)
 
 class WeatherAPI:
     # not implemented
-    class _Create(Resource):
-        def post(self, weather):
-            addWeather(weather)
-            pass
-            
+    
     # getWeather()
     class _Read(Resource):
-        def get(self):
-            return jsonify(getWeather())
+        def get(self, weather):
+            return jsonify(getWeatherAPIData(weather))
 
-
-        
-    api.add_resource(_Create, '/create/<string:weather>')
-    api.add_resource(_Read, '/')
+    api.add_resource(_Read, '/<string:weather>')
 
 if __name__ == "__main__": 
     # server = "http://127.0.0.1:5000" # run local

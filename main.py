@@ -51,6 +51,7 @@ def activate_job():  # activate these items
     initJokes()
     initUsers()
     initPlayers()
+
     initWeather()
 
 #this runs the application on the development server

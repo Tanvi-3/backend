@@ -4,13 +4,9 @@ services:
                 image: flask_port_v1
                 build: .
                 ports:
-<<<<<<< HEAD
-                        - "8069:8069"
-=======
-                        - "8531:8080"
->>>>>>> d40f02080a3024b19dbb594094b327aaf34b9c5b
+                        -"8531:8080"
                 volumes:
-                        - ./volumes:/volumes
-                        - ./instance:/instance
+                         - ./volumes:/volumes
+                         - ./instance:/instance
                 restart: unless-stopped
                 network_mode: bridge

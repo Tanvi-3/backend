@@ -7,6 +7,7 @@ from model.jokes import initJokes
 from model.users import initUsers
 from model.players import initPlayers
 from model.weather2 import initWeather 
+from model.cityimagesmodel import initCityImage
 
 
 #setup APIs
@@ -15,6 +16,7 @@ from api.joke import joke_api # Blueprint import api definition
 from api.user import user_api # Blueprint import api definition
 from api.player import player_api
 from api.weather import weather_api
+from api.cityimages import cityImage_api
 
 
 
@@ -31,6 +33,7 @@ app.register_blueprint(user_api) # register api routes
 app.register_blueprint(player_api)
 app.register_blueprint(app_projects) # register app pages
 app.register_blueprint(weather_api)
+app.register_blueprint(cityImage_api)
 
 @app.errorhandler(404)  # catch for URL not found
 def page_not_found(e):
@@ -51,11 +54,12 @@ def activate_job():  # activate these items
     initUsers()
     initPlayers()
     initWeather()
+    initCityImage()
 
 #this runs the application on the development server
 if __name__ == "__main__":
     # change name for testing
     from flask_cors import CORS
     cors = CORS(app)
-    app.run(debug=True, host="0.0.0.0", port="8551")
+    app.run(debug=True, host="0.0.0.0", port="8531")
 # add button

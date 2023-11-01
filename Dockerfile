@@ -10,6 +10,6 @@ COPY . /
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install gunicorn
 
-EXPOSE 8080
+EXPOSE 8531
 
 CMD [ "gunicorn", "main:app" ]

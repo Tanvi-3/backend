@@ -26,11 +26,11 @@ def getWeatherAPIData(weather):
     temp_f= j['current']["feelslike_f"]
     weatherIcon_url = ""
     if temp_f<=60:
-        weatherIcon_url= "https://backend.stu.nighthawkcodingsociety.com/static/assets/cloud_clipart.png"
+        weatherIcon_url= "http://localhost:8531/static/assets/cloud_clipart.png"
     elif temp_f < 70 and temp_f>60:
-        weatherIcon_url= "https://backend.stu.nighthawkcodingsociety.com/static/assets/partly_sunny.png"
+        weatherIcon_url= "http://localhost:8531/static/assets/partly_sunny.png"
     else:
-        weatherIcon_url= "https://backend.stu.nighthawkcodingsociety.com/static/assets/sunny_weather.png"
+        weatherIcon_url= "http://localhost:8531/static/assets/sunny_weather.png"
     print(weatherIcon_url)
     j['current']['weatherIcon_url'] = weatherIcon_url
     return j
